@@ -33,4 +33,7 @@ filesystem/include/ghc/filesystem.hpp:
 	git clone https://github.com/gulrak/filesystem.git
 
 winlibs: filesystem/include/ghc/filesystem.hpp
-	g++ -I..\PDCurses-3.9 -L..\PDCurses-3.9\wincon $(SRCS) -lpdcurses -o pexclippy.exe
+	g++ -I..\PDCurses-3.9 -L..\PDCurses-3.9\wincon $(SRCS) -l:pdcurses.a -o pexclippy.exe
+	dir 
+	strip pexclippy.exe
+	dir
