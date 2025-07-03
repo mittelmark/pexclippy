@@ -1,0 +1,40 @@
+name: Binaries Ubuntu 22,24 (linux-gcc)
+
+on:
+  workflow_dispatch:
+    branches: [ master, dev ]
+env:
+   VERSION: "0.0.1"
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-24.04, ubuntu-22.04-arm, ubuntu-24.04-arm]  # Specify the Ubuntu version
+
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v4
+     
+    - name: developer library installs
+      run: |
+        sudo apt install build-essential
+        #sudo apt install desktop-file-utils
+        sudo apt install libxt-dev
+        export VRS=`grep -E 'meYEAR|meMONTH|meDAY' src/evers.h | head -n 3 | awk '{ print $3 }' | paste -sd '-' | sed 's/[-"]//g'`
+        echo "VRS=$VRS" >> $GITHUB_ENV
+
+    - name: Extract branch name
+      run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        
+    - name: make linux binary
+      run:  |
+        cd pexclippy
+        make 
+        cp pexclippy pexclippy.bin
+
+    - name: Upload Ubuntu Release files
+      uses: actions/upload-artifact@v4
+      with: 
+        name: ${{ matrix.os }}-pexclippy-Linux-${{ env.BRANCH_NAME }}
+        path: pexclippy/pexclippy.bin
+
