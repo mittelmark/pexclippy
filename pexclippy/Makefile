@@ -32,5 +32,5 @@ pex: filesystem/include/ghc/filesystem.hpp
 filesystem/include/ghc/filesystem.hpp:
 	git clone https://github.com/gulrak/filesystem.git
 
-winlibs:
+winlibs: filesystem/include/ghc/filesystem.hpp
 	g++ -I..\PDCurses-3.9 -L..\PDCurses-3.9\wincon pex.cpp peyclippy.cpp -lpdcurses -o pexclippy.exe
