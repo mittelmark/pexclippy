@@ -8,7 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2022
+    strategy:
+      matrix:
+        os: [windows-2022, windows-2025] 
+  
+    runs-on: ${{ matrix.os }}
     name: Build on ${{ matrix.distro }} ${{ matrix.arch }}
     steps:
     - uses: actions/checkout@v4
@@ -34,14 +38,8 @@ jobs:
         cd pexclippy
         mingw32-make winlibs
         dir
-    - name: Upload Windows WinlibRelease files
+    - name: Upload Windows Winlib files
       uses: actions/upload-artifact@v4
       with: 
-        name: MicroEmacs09-${{ env.VERSION }}-Windows
-        path: MicroEmacs09-${{ env.VERSION }}-Windows
-    
-    - name: Upload MacOS Release files
-      uses: actions/upload-artifact@v4
-      with: 
-        name: ${{ matrix.os }}-pexclippy-Windows
+        name: ${{ matrix.os }}-intel-pexclippy
         path: pexclippy/pexclippy.exe
