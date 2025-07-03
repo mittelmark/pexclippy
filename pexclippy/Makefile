@@ -12,7 +12,7 @@ FORMATTER := clang-format -i
 # $@ - target
 # $< - first requirement
 # $^ - all requirements
-pexclippy: $(OBJS) filesystem/include/ghc/filesystem.hpp
+pexclippy: filesystem/include/ghc/filesystem.hpp $(OBJS) 
 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LFLAGS)
 	strip $@
 
@@ -27,7 +27,6 @@ format:
 	$(FORMATTER) $(SRCS) $(HDRS)
 pex: filesystem/include/ghc/filesystem.hpp
 	$(CC) -DPEX $(CFLAGS) pex.cpp -o pex
-
 
 ## as std::filesystem is not in the Pool house 70
 filesystem/include/ghc/filesystem.hpp:
