@@ -68,7 +68,7 @@ std::string get_os() {
 
 std::string get_session_type() {
 #ifdef _WIN32
-    return "windows"
+    return "windows";
 #elif __APPLE__
     // Not needed on Mac, but keep for interface consistency
     return "macos";
