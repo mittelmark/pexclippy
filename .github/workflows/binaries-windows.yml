@@ -36,10 +36,13 @@ jobs:
         PATH=%CD%\mingw32\bin;%PATH%
         gcc --version
         cd pexclippy
+        mkdir release
+        copy ..\mingw32\bin\libstd++-6.dll release
         mingw32-make winlibs
         dir
+        copy pexclippy.exe release
     - name: Upload Windows Winlib files
       uses: actions/upload-artifact@v4
       with: 
         name: ${{ matrix.os }}-intel-pexclippy
-        path: pexclippy/pexclippy.exe
+        path: pexclippy/release/*
