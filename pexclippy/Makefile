@@ -31,3 +31,6 @@ pex: filesystem/include/ghc/filesystem.hpp
 ## as std::filesystem is not in the Pool house 70
 filesystem/include/ghc/filesystem.hpp:
 	git clone https://github.com/gulrak/filesystem.git
+
+winlibs:
+	g++ -I..\PDCurses-3.9 -L..\PDCurses-3.9\wincon pex.cpp peyclippy.cpp -lpdcurses -o pexclippy.exe

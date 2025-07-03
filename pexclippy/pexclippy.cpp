@@ -19,7 +19,11 @@
 #include <sstream>
 #include <iostream>
 #include <map>
+#if defined(_WIN32)
+#include <curses.h>
+#else
 #include <ncurses.h>
+#endif
 #include <string>
 #include <vector>
 #include "pex.hpp"

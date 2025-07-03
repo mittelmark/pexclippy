@@ -24,6 +24,7 @@ jobs:
         cd PDCurses-3.9/wincon/
         mingw32-make 
         dir        
+        cd ..\..
     - name: compile exe
       shell: cmd
       run: |
@@ -31,7 +32,7 @@ jobs:
         PATH=%CD%\mingw32\bin;%PATH%
         gcc --version
         cd pexclippy
-        mingw32-make 
+        mingw32-make winlibs
         dir
     - name: Upload Windows WinlibRelease files
       uses: actions/upload-artifact@v4
