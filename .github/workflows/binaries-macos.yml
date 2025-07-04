@@ -22,6 +22,8 @@ jobs:
         run: |
            echo `uname -a`
            uname -r
+           export ARCH=`hostnamectl  | grep Architecture: | sed -E 's/.+: +//'`
+           echo "ARCH=$ARCH" >> $GITHUB_ENV
            brew install xquartz
            brew install make
            brew install coreutils
@@ -53,10 +55,15 @@ jobs:
         run:  |
           cd pexclippy
           make 
-          cp pexclippy pexclippy.bin
+          mkdir bin
+          echo "pwd"
+          pwd
+          ls -R
+          cp pexclippy bin/
+          cp ../LICENSE bin/
 
       - name: Upload MacOS Release files
         uses: actions/upload-artifact@v4
         with: 
-          name: ${{ matrix.os }}-pexclippy-MacOS-${{ env.BRANCH_NAME }}
-          path: pexclippy/pexclippy.bin
+          name: ${{ matrix.os }}-${{ env.ARCH }}-pexclippy
+          path: pexclippy/bin
