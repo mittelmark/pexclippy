@@ -28,10 +28,12 @@ jobs:
         mkdir bin
         cp pexclippy bin/
         cp ../LICENSE bin/
-
+        cd ..
+        ls -R
+        
     - name: Upload Ubuntu Release files
       uses: actions/upload-artifact@v4
       with: 
         name: Linux-${{ env.ARCH }}-pexclippy
-        path: pexclippy/pexclippy/bin/*
+        path: pexclippy/pexclippy/bin
 
