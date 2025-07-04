@@ -104,11 +104,11 @@ using [Github Actions](https://github.com/mittelmark/pexclippy/actions).
 
 | Platform    | Processor | Link |
 |:------------|:---------:|------|
-| Linux       | intel64   |      |
-| Linux       | aarch64   |      |
-| MacOS       | intel64   |      |
-| MacOS       | apple64   |      |
-| Windows     | intel32   |      |
+| Linux       | intel64   | [Linux-x86-64-pexclippy.zip](https://github.com/user-attachments/files/21052124/Linux-x86-64-pexclippy.zip)     |
+| Linux       | aarch64   | [Linux-arm64-pexclippy.zip](https://github.com/user-attachments/files/21052123/Linux-arm64-pexclippy.zip)     |
+| MacOS       | intel64   | [macos-13-x86_64-pexclippy.zip](https://github.com/user-attachments/files/21052126/macos-13-x86_64-pexclippy.zip)     |
+| MacOS       | apple64   | [macos-14-arm64-pexclippy.zip](https://github.com/user-attachments/files/21052127/macos-14-arm64-pexclippy.zip)     |
+| Windows     | intel32   | [windows-2022-intel-pexclippy.zip](https://github.com/user-attachments/files/21052128/windows-2022-intel-pexclippy.zip)     |
 
 The  Windows  intel32  build  should  be  working  as  well  on 64 bit and arm
 platforms.

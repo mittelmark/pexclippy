@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Detlef Groth
+Copyright (c) 2025 Detlef Groth, University of Potsdam, Germany
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additional Notices and Acknowledgments
+
+This software is built using the following third-party libraries:
+
+    libstdc++
+
+    Linked under the terms of the GNU General Public License, version 3, with
+    the GCC Runtime Library Exception, which permits static and dynamic
+    linking without affecting the license of this software.
+
+    PDCurses
+
+    Used under public domain terms. (If using PDCursesMod, note any
+    GPL-licensed build scripts are not included in the distributed software.)
+
+    ncurses
+
+    Used under the MIT license (or X11 license).
+    See the ncurses documentation for details.
