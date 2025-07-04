@@ -22,7 +22,7 @@ jobs:
         run: |
            echo `uname -a`
            uname -r
-           export ARCH=`hostnamectl  | grep Architecture: | sed -E 's/.+: +//'`
+           export ARCH=`uname -m`
            echo "ARCH=$ARCH" >> $GITHUB_ENV
            brew install xquartz
            brew install make
