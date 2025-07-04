@@ -34,45 +34,7 @@ Here the UML diagram of the application:
 <center>
 ![Diagram](https://kroki.io/plantuml/svg/eNptUkFu2zAQvPMVA18ixU4eEBhGivbSQ4H-QKDItURAIglyFVgo0rd3Ral23PRE7XJ2NDPc18w68TQOSnk9Uo7aECJd8EsBZtA5YyflDsfj9f50KrfA3oQ4NxwaM7jYBp1slTk539UveAvOrqCOuDHBn13XWJc2BHSMC6Eg18YN24eRFiQZDmmu_oMIuarxuZ0pZxd8w3Okf8d6nRu6MPkF8VfD2Q20iDhsUFwR9TqVSNsPUq7mRh2Pa3FYjxPKwAO-WIvAPSVM7AbHM86TNyyUGdIlgb2rd6XWaH_S5atEF-cS6P5WF3_LT0t7JD-VzhbqHouwbx8j-qxIcE-_7wmtoLEofYI8CGvnc3U3JERtCIO6dxKndnBGVHAf7GZDLDzgu7fOaCZwrxmbk0meoWzQGoCjrG42n59P2z69YFegu4Xoh0jZ-FH5wNDr7h3QTgyjPVqC9MnWajmQXNczwvmWmGgehaVyXqZT93aA6XXC42OpakXeFgalXuVzWfg__DL75g==)
 
-<!--
-@startuml
-
-namespace pex {
-  class "pex" <<namespace>> {
-    +copy_to_clipboard(string): void
-    +get_config_dir(string appname): string
-    +get_home_directory(): string
-    +get_os() : string
-    +get_session_type(): string
-    +has_extension(string filename, string extension)
-    +read_directory(string): map<string,string> 
-    ' Add other utility functions here
-  }
-}
-
-class PexClippy {
-  + PexClippy() : ctor
-  + menu() : void
-  + readDirectory(): map<string,string>
-  -~PexClippy() : dtor  
-  - contains(string,string): bool
-  ' Add other public methods here
-}
-
-' Indicate that Clippy uses pex utilities
-PexClippy ..> "pex" : " uses"
-
-' Main method (not a class, but can be noted)
-note right of PexClippy
-  main(int argv, char ** argv)
-end note
-
-@enduml
-
--->
-
 [Edit this diagram](https://niolesk.top/#https://kroki.io/plantuml/svg/eNptUkFu2zAQvPMVA18ixU4eEBhGivbSQ4H-QKDItURAIglyFVgo0rd3Ral23PRE7XJ2NDPc18w68TQOSnk9Uo7aECJd8EsBZtA5YyflDsfj9f50KrfA3oQ4NxwaM7jYBp1slTk539UveAvOrqCOuDHBn13XWJc2BHSMC6Eg18YN24eRFiQZDmmu_oMIuarxuZ0pZxd8w3Okf8d6nRu6MPkF8VfD2Q20iDhsUFwR9TqVSNsPUq7mRh2Pa3FYjxPKwAO-WIvAPSVM7AbHM86TNyyUGdIlgb2rd6XWaH_S5atEF-cS6P5WF3_LT0t7JD-VzhbqHouwbx8j-qxIcE-_7wmtoLEofYI8CGvnc3U3JERtCIO6dxKndnBGVHAf7GZDLDzgu7fOaCZwrxmbk0meoWzQGoCjrG42n59P2z69YFegu4Xoh0jZ-FH5wNDr7h3QTgyjPVqC9MnWajmQXNczwvmWmGgehaVyXqZT93aA6XXC42OpakXeFgalXuVzWfg__DL75g==)
-
 </center>
 
 ## Compilation
