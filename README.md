@@ -27,9 +27,35 @@ logic is provided in a class _PexClippy_.
 The  application  should  be  cross-platform  using  windows  API calls on the
 Windows  platform  and  terminal  applications  like  `xclip`  (Linux-X11),
 `wl-copy`  (Linux-Wayland)  or `pbcopy`  (MacOS) using the _popen_  command on
-these Unix platforms.
+these Unix platforms. 
 
-Here the UML diagram of the application:
+## Usage
+
+The user should provide a keyboard  shortcut for launching the  application or
+pin it for  instance  into the taskbar to have easy access. On Linux using the
+_gnome-terminal_  the _pexclippy_  application if placed in a folder belonging
+to the PATH variable can be started like this:
+
+```
+gnome-terminal -- pexclippy
+```
+
+After  the  application  was  started  and ended for the first  time, the user
+should place the snippets  file created with an text editor
+of their choice with the extension _.txt_ into the following folders:
+
+- Linux: _~/.config/pexclippy_
+- MacOS: _~/Library/Application Support/pexclippy_
+- Windows: _~\AppData\Roaming\pexclippy_
+
+If the User starts the application  again files stored within this folder will
+be  selectable  by the user by providing  parts of the filename  like visible
+here:
+
+<img src="https://github.com/mittelmark/pexclippy/blob/main/assets/screenshot.png?raw=true"
+alt="Screenshot" />
+
+Here the UML diagram of the C++ application:
 
 <center>
 
