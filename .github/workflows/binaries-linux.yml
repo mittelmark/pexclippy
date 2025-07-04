@@ -28,6 +28,8 @@ jobs:
         mkdir bin
         cp pexclippy bin/
         cp ../LICENSE bin/
+        ls bin
+        pwd
         cd ..
         ls -R
         
